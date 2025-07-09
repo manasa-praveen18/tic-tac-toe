@@ -164,14 +164,13 @@
         .map((val, idx) => val === '' ? idx : null)
         .filter(val => val !== null);
 
-  // Choose random empty cell
         const randomIndex = emptyCells[Math.floor(Math.random() * emptyCells.length)];
 
-  // Place AI move
+  
         boardState[randomIndex] = 'O';
         cells[randomIndex].textContent = 'O';
 
-  // Check win/draw
+  
         const winningCombo = checkWin();
         if (winningCombo) {
             highlightWinningCells(winningCombo);
@@ -189,7 +188,7 @@
             return;
         }
 
-  // Switch back to player X
+  
         currentPlayer = 'X';
         message.textContent = `Player ${currentPlayer}'s turn`;
     }
